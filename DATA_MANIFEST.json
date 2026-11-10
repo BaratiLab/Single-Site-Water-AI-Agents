@@ -1,0 +1,130 @@
+{
+  "parts": [
+    {
+      "file": "Campaign-data-01.zip",
+      "sha256": "89e8801c30a397f87994282224a9b394b39d9dfc3a008a67665897951f96a8c7",
+      "bytes": 17281191,
+      "entries": 158
+    },
+    {
+      "file": "Campaign-data-02.zip",
+      "sha256": "9566fb1093fa0a3f1eaed0eea86127bd4a98a594f689e76b635453e34095cb0b",
+      "bytes": 21266131,
+      "entries": 24
+    },
+    {
+      "file": "Campaign-data-03.zip",
+      "sha256": "3d19fc066f6903a6bce71d63f6f684a3e2681af47947346e422629ba6725cb9e",
+      "bytes": 21266015,
+      "entries": 24
+    },
+    {
+      "file": "Campaign-data-04.zip",
+      "sha256": "ad2a1ba27ee270187f2cbadbfcbb168e86ac84abcb3cd640f5862f94629e635a",
+      "bytes": 21265090,
+      "entries": 24
+    },
+    {
+      "file": "Campaign-data-05.zip",
+      "sha256": "6b9dbc4c72d8694901e407d5a8be062b246defa67b87f13032afc2d02694b690",
+      "bytes": 21262927,
+      "entries": 24
+    },
+    {
+      "file": "Campaign-data-06.zip",
+      "sha256": "1530cafa154f23ea0f970ee97c927cdd745c9de9926f9c9ec9d6a3bc292d6f67",
+      "bytes": 21264185,
+      "entries": 24
+    },
+    {
+      "file": "Campaign-data-07.zip",
+      "sha256": "5f9887fd0f481e1584b2dd4f495ba78e58c114b5b64ba8d6255561832d30c48b",
+      "bytes": 21265674,
+      "entries": 24
+    },
+    {
+      "file": "Campaign-data-08.zip",
+      "sha256": "e2826cd6c1a6aeb0b76c8c9c486afc57919b45f83795cea2d47ebe31a0ed586e",
+      "bytes": 21265776,
+      "entries": 24
+    },
+    {
+      "file": "Campaign-data-09.zip",
+      "sha256": "c2f0b8426fd20a4c1186471f962d2960849abbf90c67db182383a988d89fd16c",
+      "bytes": 19161757,
+      "entries": 212
+    },
+    {
+      "file": "Campaign-data-10.zip",
+      "sha256": "9f08f47e184992614a0f96e4cd2651dba7c121cd5f633a62d082631e88056209",
+      "bytes": 17819356,
+      "entries": 246
+    },
+    {
+      "file": "Campaign-data-11.zip",
+      "sha256": "757dc2cb06aa986fc528f1ef33af926b66c064f52d69cb794a0f1642ad633f65",
+      "bytes": 17752140,
+      "entries": 225
+    },
+    {
+      "file": "Campaign-data-12.zip",
+      "sha256": "642a2e9677efb58fe10cc80476a82e6077e160f41daf962f9ee86ae7323b97c7",
+      "bytes": 17739965,
+      "entries": 224
+    },
+    {
+      "file": "Campaign-data-13.zip",
+      "sha256": "cbe9cfc1e750f696b33f3c38c6fc3ba42bb6d84399f0596f49f33ff201aabc50",
+      "bytes": 15277819,
+      "entries": 591
+    },
+    {
+      "file": "Campaign-data-14.zip",
+      "sha256": "3f734cf659ff39b1d06e44e2261a10691f9d9c85fc6d113333ac2b0a751efdb8",
+      "bytes": 21198304,
+      "entries": 15
+    },
+    {
+      "file": "Campaign-data-15.zip",
+      "sha256": "13fef2484b7c6b04a86a149830256b7ca47e5e25254bbef5086364bff6f50a18",
+      "bytes": 21231826,
+      "entries": 38
+    },
+    {
+      "file": "Campaign-data-16.zip",
+      "sha256": "d97c59c4e8185f397d0e809ec073fa9511f000319d5a9e789646337ffdcb2970",
+      "bytes": 17535320,
+      "entries": 107
+    },
+    {
+      "file": "Campaign-data-17.zip",
+      "sha256": "cea3d960f41d1218b900bc2991e992b74eb2d6d20d665499a9d3da8030342858",
+      "bytes": 21206374,
+      "entries": 18
+    },
+    {
+      "file": "Campaign-data-18.zip",
+      "sha256": "f579c707c5686012766c8a05bf1d3de373b1e07d83031581509057f1ef538b14",
+      "bytes": 14133454,
+      "entries": 30
+    },
+    {
+      "file": "Campaign-data-19.zip",
+      "sha256": "4579e6f93c5168860be23c8e85f652db308ea106661681a46dc97ddb9ec67fdf",
+      "bytes": 21259312,
+      "entries": 5
+    },
+    {
+      "file": "Campaign-data-20.zip",
+      "sha256": "22166d33a64fd37b672ca1a5bcc90ce762323cdad31111c05d75be9ea27bcc76",
+      "bytes": 3028496,
+      "entries": 12
+    }
+  ],
+  "legacy_snapshot": {
+    "archive_path": "outputs/v7/round5/density512_seed83403_npt_trajectory.npz",
+    "source_sha256": "fe65aa7e1ac79e0f1eb87da456754f24d129e9d5064aa2912a45423f1840695d",
+    "snapshot_sha256": "60684878147a1e0b0467e136ed9d0a185bb29f4044eee9b94f0fc3f89b311c8a",
+    "scope": "Final positions and cell only; used as initialization by the round-six scripts, not a reproduction of the earlier three-site trajectory."
+  }
+}

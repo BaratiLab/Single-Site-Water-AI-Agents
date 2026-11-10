@@ -1,0 +1,196 @@
+ROUND6 cg/joint: REPRODUCIBLE BUILD AND BASIC MD
+
+Status
+------
+The primary round6 c34 model is frozen byte-exact as frozen_model.json.
+SHA256: b465820825ebda1337ac11ada2ac3942e1ed5ab287aed7c439a6d7cc3c29070c
+It was selected under an explicit pre-holdout density-risk amendment; c33 remains
+the strict-score winner. No holdout result was used to choose this model.
+
+optimized_alias.json is an EXACT-physics-equivalent shorter-neighbor-cutoff
+representation, not a refit. SHA256:
+8b8c18324246b64b0d9e147d2ec383f5d6240a9868c9ea0aef7030e184d4eb35
+Its cutoff is5.5A instead of6A; all removed radial intervals are exactly zero and
+both angular and coordination supports lie within5.5A. Twenty training frames
+show exactly zero energy/force/all-six-virial differences. A2ps1fs NVE smoke
+passed. See ../round6_optimization/EQUIVALENCE_REPORT.json.
+
+frozen_model.params and optimized_alias.params are exported numeric parameters.
+frozen_start512.data contains the declared last ambient training configuration.
+FROZEN_RELEASE.json links hashes, gas reference and qualification status.
+The portable build and10ps basic NVT example completed after exclusive timing;
+REPRODUCIBILITY_SMOKE.json records this reproducibility check, not property
+evidence. Final instantaneous temperature274.29K is not an equilibrium result.
+
+This preparation preserves the existing cg_moment.cpp, cg_moment.dylib and
+native.py hashes. LIVE_HASHES_BEFORE_DOCS.json and LIVE_HASHES_AFTER_DOCS.json
+record that fact. Do not rebuild/overwrite a loaded library while MD is live.
+
+Files and external dependencies
+-------------------------------
+- cg_moment.cpp: complete native pair plugin; GPL-2.0-or-later notice retained.
+- lammpsplugin.h and LICENSE-LAMMPS: local unmodified plugin ABI header/license.
+  Quoted inclusion finds this local header first; no earlier round's vendor
+  directory is required for portable compilation.
+- build_portable.py: builds a NEW cg_joint_rebuilt.dylib on macOS, or
+  cg_joint_rebuilt.so on Linux, without replacing the active library.
+- native.py: JSON export, atomic data writer, serial MD helpers, gas reference.
+- check.py: generic independent scalar energy/forces/full virial checks.
+- check_finalist.py: requires an explicit future model SHA and trajectory.
+- example_nvt.in.template: parameterized, unexecuted basic NVT example.
+
+External requirements: Python, NumPy, matching LAMMPS Python bindings and shared
+library, LAMMPS development headers (including fmt), matching MPI headers when
+required by that build, C++17 compiler, and LAMMPS PLUGIN support. The local ABI
+header does not replace the full LAMMPS development installation. The plugin
+implements its own many-body terms; it does not require a separate bonded style.
+
+The local tested runtime is LAMMPS22Jul2025 on macOS arm64. Workspace bindings
+reside in work/lammps_runtime. Supplied dylibs link to that local installation;
+they are not ABI-independent, Linux, Windows, x86 or universal binaries. Rebuild
+for another runtime/version/compiler/MPI ABI. Native.py's current convenience
+loader targets the local macOS cg_moment.dylib; no loader changes were made while
+simulations were active. The parameterized input below supports a rebuilt .so
+by supplying its full path. Windows compilation is not provided.
+
+Build commands from project root -- AFTER jobs release the CPU
+--------------------------------------------------------------
+export PYTHONPATH="$PWD/work/lammps_runtime"
+export OMP_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+
+# NEW output only; do not overwrite or rebuild the live library.
+python outputs/cg_water/round6_engine/build_portable.py
+
+On another installation, select that installation's bindings instead of the
+workspace PYTHONPATH and ensure its matching headers/library are installed.
+This portable script was successfully built into a NEW library only after
+exclusive timing; the original active library/source/native.py remained unchanged.
+
+Export a FUTURE frozen JSON and initialization
+----------------------------------------------
+After freeze, set these task-specific variables to the actual files:
+
+export water_frozen_json="$PWD/outputs/cg_water/round6_engine/frozen_model.json"
+export water_initial_npz="$PWD/outputs/cg_water/round6_engine/finalist_initial_snapshot.npz"
+export water_frozen_sha=b465820825ebda1337ac11ada2ac3942e1ed5ab287aed7c439a6d7cc3c29070c
+
+python - <<'PY'
+import os,sys,hashlib,json
+from pathlib import Path
+import numpy as np
+h=Path('outputs/cg_water/round6_engine').resolve()
+sys.path.insert(0,str(h))
+from native import export,write_data,isolated_energy_kJ_mol
+model=Path(os.environ['water_frozen_json'])
+start=Path(os.environ['water_initial_npz'])
+# Verify SHA against the coordinator's freeze before export; do not use a
+# changing selected_candidate file from an ongoing search.
+actual_sha=hashlib.sha256(model.read_bytes()).hexdigest()
+assert actual_sha==os.environ['water_frozen_sha'], 'FreezeSHA mismatch'
+print('modelSHA256',actual_sha)
+export(model,h/'frozen_model.params')
+z=np.load(start)
+x=z['positions_A'][-1]
+b=z['cell_A'][-1] if 'cell_A' in z else z['box_A']
+b=np.diag(b) if np.asarray(b).shape==(3,3) else np.broadcast_to(b,(3,))
+write_data(h/'frozen_start512.data',x,b)
+print('isolatedbeadenergy_kJmol',isolated_energy_kJ_mol(model))
+PY
+
+The exporter enforces negativeK2=>positiveh4 before writing parameters. Native
+parameter reading independently enforces it, positive angular-polynomial bounds,
+and embedding cubic/quartic stabilization. Exact JSON values determine the
+potential; do not omit the radial spline or replace it with Lennard-Jones.
+
+Run the prepared 10ps example -- not property validation
+-------------------------------------------------------
+python - <<'PY'
+from pathlib import Path
+from lammps import lammps
+h=Path('outputs/cg_water/round6_engine').resolve()
+plugin=h/'cg_joint_rebuilt.dylib'  # use .so after rebuilding on Linux
+l=lammps(cmdargs=['-screen','none','-log',str(h/'example_nvt.log'),
+ '-var','PLUGIN',str(plugin),'-var','START_DATA',str(h/'frozen_start512.data'),
+ '-var','MODEL_PARAMS',str(h/'frozen_model.params')])
+l.file(str(h/'example_nvt.in.template'))
+l.close()
+PY
+
+The example performs10000steps at1fs with a Nosé-Hoover thermostat and1ps damping.
+It supplies no experimental-property result, convergence claim or real-water CG
+clock calibration. An installed matching LAMMPS executable can use the same
+input template and -var arguments. A serial MPI-enabled library may require
+permission for local initialization sockets; this does not qualify multi-rank MD.
+
+Model semantics and units
+-------------------------
+U=sum_pairs phi(r)+sum_i[F(n_i)+Uunder(n_i)+L(n_i)*A_i].
+The radial phi is an interval cubic with its declared knots and coefficients.
+Coordination n=sum_j(1-r²/rd²)^3 inside rd. Angular A is the exact unordered-pair
+invariant sum_j<k w_ij*w_ik*(cos(theta)+1/3)², with optional positive polynomial
+w=s³Q(s)², s=max(0,1-r²/rc²). General positive L=l0+l1delta+l2delta² is used only
+when angular_polynomial is present; otherwise the previous square is retained.
+F includes K1/K2 and optional h3/h4 powers in(n−n0). Analytic forces include
+L'(n)*A, not merely L*gradient(A). The full six-component global virial is native.
+
+Parameters use kJ/mol and Angstrom; the plugin divides energy/force by4.184 to
+obey LAMMPS units real. Thermo energy is system kcal/mol, pressure atm, time fs.
+Multiply energy by4.184 for system kJ/mol, pressure by1.01325 for bar, and divide
+LAMMPS time by1000 for ps. Historical JSON time metadata in ps does not change
+the integrator's real-unit timestep. Mass is18.01528g/mol numerically18.01528amu.
+
+E_iso=K2*n0²−K1*n0−h3*n0³+h4*n0⁴+A3+A4, generally NOT zero. Include this
+reference in cohesion diagnostics; it is not a molecular electronic energy.
+The separate electric/caloric closures are not intrinsic fluctuations of this
+neutral mechanical Hamiltonian.
+
+Limits and safe execution
+--------------------------
+One species, serial orthogonal periodic cells only. atom_modify map array and
+sort0 are required. Every box length must remain greater than twice the largest
+radial/coordination/angular support throughout the run, not merely at startup.
+The current engine checks the initial cell; monitor NPT cells separately. Do not
+apply two integrators to the same atoms. After changing/removing fixes, perform
+ordinary setup (e.g.run0 with default preyes) before pre-no continuation; stale
+fix setup previously caused a corrected transport-runner crash.
+
+MPI decomposition, triclinic geometry, restart serialization, per-atom energy,
+per-atom stress, heat flux and production timestep scaling remain unqualified.
+Short NVE/FD mechanics checks do not prove EOS, phase equilibria, transport,
+production stability or universal thermodynamic stability. The quartic guard
+removes an obvious unstable coordination-polynomial direction; it is not a
+complete mathematical stability proof for arbitrary proposed coefficients.
+
+These unexecuted examples are not evidence of completed MD. During an active
+fitting/validation campaign, exclusive timing must wait until other MD is idle.
+Benchmark scripts record actual state and stability rather than assuming
+accuracy-equivalent water dynamics.
+
+Frozen mechanics numerical qualification
+----------------------------------------
+finalist_c34_MECHANICS.json preserves an original scalar-FD fixed-step failure:
+h1e-6 gives0.001194kJ/mol absolute virial error versus0.001 tolerance. A declared
+step sweep shows coarse O(h²) truncation followed by cancellation at fine steps.
+Two second-order Richardson estimates differ from the analytic virial by
+0.000563 and0.000495kJ/mol, both below the UNCHANGED original tolerance; their
+mutual spread is0.0000675kJ/mol. FINALIST_MECHANICS_ADJUDICATION.json records a
+separate qualified pass. No potential, force implementation, or tolerance was
+changed. Force FD, gas reference and2ps1fs NVE passed; the primary NVE drift is
+1.16e-5kJ/mol/bead. This numerical adjudication is not property validation.
+
+Compact input provenance and completed cost
+------------------------------------------
+finalist_initial_snapshot.npz preserves the exact last training input frame and
+cell; SNAPSHOT_PROVENANCE.json retains the full source trajectory hash. The
+benchmark_initial_snapshot.npz in ../round6_benchmark similarly preserves its
+original source frame; passing --initial-trajectory that file reproduces the
+same scaling and byte-identical common512.data. Neither snapshot recreates a
+20-frame equivalence assessment without the original hashed trajectory.
+
+Both exclusive fixed-budget timing blocks are complete. See RESULTS.json in
+../round6_benchmark and FAST_BENCHMARK.json in ../round6_optimization. The fused
+kernel reduced observed mean cost relative to the current alias, but its wide
+ranges overlap native mW and no native-mW speed advantage is established.
+Fast source/library remain separate; the primary model and live implementation
+hashes are unchanged. The potential remains NOT QUALIFIED by full properties.

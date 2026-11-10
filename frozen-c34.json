@@ -1,0 +1,411 @@
+{
+  "status": "Literature-informed polynomial training candidate; no independent water validation",
+  "mass_amu": 18.01528,
+  "mapping": "oxygen position, one bead per molecule",
+  "units": {
+    "length": "angstrom",
+    "energy": "kJ/mol"
+  },
+  "pair_knots_A": [
+    1.8,
+    1.9000000000000001,
+    2.0,
+    2.1000000000000005,
+    2.2,
+    2.3000000000000007,
+    2.4000000000000004,
+    2.500000000000001,
+    2.6000000000000005,
+    2.700000000000001,
+    2.8000000000000007,
+    2.9000000000000012,
+    3.000000000000001,
+    3.1000000000000014,
+    3.200000000000001,
+    3.3000000000000016,
+    3.4000000000000012,
+    3.5000000000000018,
+    3.6000000000000014,
+    3.700000000000002,
+    3.8000000000000016,
+    3.900000000000002,
+    4.000000000000002,
+    4.100000000000002,
+    4.200000000000002,
+    4.25,
+    4.28,
+    4.306500000000001,
+    5.0,
+    5.5,
+    6.0
+  ],
+  "pair_coefficients_descending": [
+    [
+      -479.24587816339596,
+      -329.1653706734175,
+      -218.79684739495013,
+      -197.5988295167653,
+      -35.87708131828113,
+      -80.15394410576903,
+      -327.9910946786622,
+      126.3447760819064,
+      42.23501528082165,
+      41.774314151114176,
+      -49.90348194047858,
+      -83.6238556897533,
+      -90.35070879737691,
+      -69.05493637649421,
+      67.86468243386066,
+      -22.04507866587038,
+      -22.12222664706947,
+      -49.32329739700414,
+      -23.813758973674936,
+      -21.5812735218728,
+      22.417530490694777,
+      48.137077512493214,
+      52.65837292924013,
+      4.335052742127457,
+      -5.4163903779498,
+      5.781123981005432,
+      -7.903039546301818,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      509.3107374820705,
+      365.536974033051,
+      266.7873628310272,
+      201.14830861254165,
+      141.8686597575114,
+      131.10553536202707,
+      107.05935213029633,
+      8.66202372669718,
+      46.56545655126912,
+      59.23596113551572,
+      71.76825538084998,
+      56.79721079870627,
+      31.710054091780478,
+      4.604841452567338,
+      -16.111639460380673,
+      4.247765269777532,
+      -2.3657583299834664,
+      -9.002426324104281,
+      -23.79941554320533,
+      -30.943543235307914,
+      -37.41792529186968,
+      -30.69266614466119,
+      -16.251542890913257,
+      -0.45403101214113517,
+      0.8464848104970977,
+      0.03402625380466007,
+      0.554327412095153,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -317.10189059693613,
+      -229.6171194454239,
+      -166.3846857590163,
+      -119.59111861465914,
+      -85.28942177765387,
+      -57.99200226569988,
+      -34.175513516467625,
+      -22.60337593076822,
+      -17.080627902971624,
+      -6.500486134293089,
+      6.59993551734343,
+      19.45648213529913,
+      28.30720862434776,
+      31.938698178782555,
+      30.788018378001208,
+      29.6016309589409,
+      29.789831652920295,
+      28.653013187511505,
+      25.37282900078054,
+      19.89853312292919,
+      13.062386270211455,
+      6.251327126558329,
+      1.5569062230008994,
+      -0.11365116730454848,
+      -0.07440578746895238,
+      -0.030380234253866233,
+      -0.012729624276871687,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      61.82159556228077,
+      34.725267999244444,
+      15.089760424359168,
+      0.9003686293727986,
+      -9.244858975484433,
+      -16.390991636993018,
+      -20.959290454048492,
+      -23.634239379070966,
+      -25.681611958798904,
+      -26.881785168302557,
+      -26.897699856225596,
+      -25.569927232623222,
+      -23.13993076679601,
+      -20.08246007224079,
+      -16.911596776213365,
+      -13.926046650583174,
+      -10.94545098065719,
+      -8.01224762531205,
+      -5.286293867198955,
+      -3.0108188815266184,
+      -1.3519822751086559,
+      -0.39750537051550905,
+      -0.03116224179379542,
+      0.01467132452640203,
+      0.0031009504166633153,
+      0.000819824272214775,
+      9.513122051012548e-05,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "lambda_kJ_mol": 599.4640644,
+  "angular_cutoff_A": 4.3065,
+  "embedding": {
+    "K2": -2.8,
+    "K1": -0.1667931559207833,
+    "n0": 2.536919437948505,
+    "rd": 5.5,
+    "h3": 0.0,
+    "h4": 0.2
+  },
+  "undercoordination": {
+    "A3": 0.0,
+    "A4": 5.999564839230267,
+    "nstar": 0.5
+  },
+  "angular_coordination": {
+    "b": 0.0,
+    "nref": 1.8004112309352125
+  },
+  "round5_structure_label": "mW_informed_squared_polynomial_weight",
+  "reference_source": "https://doi.org/10.1021/jp805227c",
+  "reference_scope": "Cubic-spline radial approximation and polynomial angular-weight approximation to mW. Published mW parameters initialize the family; no claim that mW was discovered here. Runtime spatial potential has no exponential or Coulomb term.",
+  "angular_weight": {
+    "coefficients_ascending": [
+      -0.05584374858176977,
+      13.813681810734714,
+      -482.4017976897535,
+      7165.51424376389,
+      -57527.64697894118,
+      297172.1111663983,
+      -1072499.746376668,
+      2814643.0354031,
+      -5466093.281733246,
+      7873236.650911203,
+      -8316283.856326343,
+      6264895.24457229,
+      -3188503.053282442,
+      982889.721893812,
+      -138626.9692042507
+    ]
+  },
+  "angular_polynomial": {
+    "l0": 599.4640644,
+    "l1": 0,
+    "l2": 0,
+    "nref": 2.536919437948505
+  },
+  "round6_static_counterterm": {
+    "deltaK1": -2.0,
+    "first_shell_amplitude": 1.897763155528644,
+    "before": [
+      9313.380995451218,
+      37.933583320468514
+    ],
+    "predicted_after": [
+      7755.947407549218,
+      36.86843459475797
+    ],
+    "scope": "Four frozen c21 training frames; proposal only, relaxation measured below."
+  },
+  "radial_IBI_proposal": {
+    "relaxation": 0.3,
+    "max_raw_update_kJ_mol": 1.5,
+    "source": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_fit/IBI_reference_03.npz",
+    "reference_T_K": 295.15,
+    "nominal_envelope_support_A": [
+      2.2,
+      4.306500000000001
+    ],
+    "scope": "Regularized IBI proposal with smooth sampled envelope and global clamped cubic interpolation. Small between-knot oscillations outside nominal envelope are possible; exact compact core preservation is not claimed. Requires actual joint MD validation. Pairwise representability is not assumed."
+  },
+  "round6_adaptive_provenance": {
+    "parent": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_fit/candidate_03.json",
+    "parent_hash": "968ef1bd0c68e1f4163944418341e03f480339b62f6d7d643782f63f94380c16",
+    "feedback_prompt": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_llmsr/native_batch1/next_prompt.txt",
+    "feedback_prompt_sha256": "778458cb14d6d5aff0254138b1d83aa0643b3d03e7dae3958a6955704d319032",
+    "matching_frame_source": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_fit/q03_s0/trajectory.npz",
+    "static_counterterm_iterations": [
+      {
+        "before": [
+          -646.1765298898929,
+          41.149999926717484
+        ],
+        "delta_K1_firstwell": [
+          2.0,
+          -1.5
+        ],
+        "predicted_after": [
+          341.6595908366917,
+          41.271758708814666
+        ]
+      },
+      {
+        "before": [
+          341.6595908350533,
+          41.27175870881466
+        ],
+        "delta_K1_firstwell": [
+          1.4217226325404078,
+          -1.5
+        ],
+        "predicted_after": [
+          851.3330621526106,
+          41.84372337722724
+        ]
+      }
+    ],
+    "proposal_rationale": "Measured softening response c03 and reduced PT c07 combined; radial IBI corrects measured first/second-shell shape. Static response requires actual relaxation validation."
+  },
+  "round6_adaptive3_provenance": {
+    "parent_path": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_fit/candidate_08.json",
+    "parent_sha256": "dc507c5698ede35e518ed92462c96f9168ff25c65b454774126d5ec000c02be7",
+    "feedback_prompt": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_llmsr/native_batch2/next_prompt.txt",
+    "feedback_prompt_sha256": "778458cb14d6d5aff0254138b1d83aa0643b3d03e7dae3958a6955704d319032",
+    "fixed_nstar": 0.5,
+    "nstar_rationale": "Below approximately1% nativeMWbaseline training coordination; sparsely liquid-active, no vapor accuracy claim. Selected before these proposals.",
+    "static_base": [
+      2029.9670356935433,
+      38.67256391531677
+    ],
+    "deltaK1_A4": [
+      -2.378238634096289,
+      3.4409857125696615
+    ],
+    "static_prediction": [
+      0.9999999999993179,
+      43.98748
+    ],
+    "rationale": "Actual batch2 pair-well cohesion compensation stiffenedEOS. Replace compensation by sparse lower-coordination term; stronger stabilized negative quadratic softens EOS; joint radial/angular co-scaling tests balanced network strength. ActualMDrequired."
+  },
+  "round6_broad_descriptor": {
+    "parent_path": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_fit/candidate_16.json",
+    "parent_sha256": "1fa5fda76ed524ac36badfad227a5f8f5dac27557b09e44a0744802d5fb66a93",
+    "feedback_prompt": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_llmsr/native_batch4/next_prompt.txt",
+    "feedback_prompt_sha256": "a2845c1f13942b7562b9cd8f58768edc0379265be84b19d561061bc1708a762d",
+    "radial_extension": "Exactzero additional cubic intervals; existingradialfunctionunchanged, physicalpairinteractioncutoff4.3065A, neighborcutoff6A",
+    "fixed_n0_matching_c16_frames": 2.536919437948505,
+    "sampled_n_quantiles": [
+      2.034406494897319,
+      2.1549546317003223,
+      2.543562130775322,
+      2.9822118243071665,
+      3.0590606855497207
+    ],
+    "static_base": [
+      228.1588613982539,
+      43.304460873371
+    ],
+    "static_deltaK1_A4": [
+      -0.11645065160859577,
+      0.38759320500138195
+    ],
+    "static_prediction": [
+      1.0,
+      43.98748
+    ],
+    "hypothesis": "Firstshellcoordinationinsensitivetovolume: testbroadersmoothdensitydescriptor independentlyofpreservedradial/angularfunctions. StabilizedK2negative, fixednrefmean; actualMDresponsemustpass."
+  },
+  "round6_actual_pressure_secant": {
+    "raw_proposal_path": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_fit/RAW_proposal_30.json",
+    "raw_sha256": "94c8ae09595dcdba01a0519b7cbdc6ae4f03e77c6103c1a5585091d5dfb10f23",
+    "matching_training_parent": 16,
+    "actual_probe_results": [
+      {
+        "shiftK1": -0.4,
+        "P_bar": -1194.3735460289483,
+        "Hproxy_kJ": 44.356025386900455,
+        "T_K": 297.8227660878541,
+        "P_block_SE": 172.6674778622829
+      },
+      {
+        "shiftK1": 0.4,
+        "P_bar": 617.4979090584271,
+        "Hproxy_kJ": 42.402124208928484,
+        "T_K": 295.30427397672224,
+        "P_block_SE": 127.9596879425841
+      }
+    ],
+    "relaxed_secant_dP_dK1": 2264.8393188592195,
+    "deltaK1": 0.12779618230535136,
+    "deltaA4": 0.92053159101896,
+    "scope": "Two independent25ps actualMD probes; secant/noise not validated until fullEOS. A4cohesioncounterterm assumes sparse-liquidactivation."
+  },
+  "round6_final_interpolation": {
+    "parent_models": [
+      "candidate_30.json",
+      "candidate_31.json"
+    ],
+    "endpoint_PT_bar_K": [
+      3.5953756408343907,
+      2.709969761035896
+    ],
+    "t_c31": 0.4,
+    "target_PT_bar_K": 5.6863717,
+    "rule": "Rootpredeclaredrobustcenteredcontrolw040: bulkKandPTinterpolated, alpha=PT/K; pressureinnerloopplanned. ActualMDmustverifyoriginalnoncompensatingscore. Noadditionalgrammar.",
+    "feedback_prompt": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_llmsr/native_batch6/next_prompt.txt",
+    "feedback_prompt_sha256": "2d77e0befa8c9087a4e47f414758949ce85141714203e6e03ade5b269ee51269"
+  },
+  "round6_final_actual_pressure_secant": {
+    "N": 512,
+    "probe_results": [
+      {
+        "shiftK1": -0.2,
+        "P_bar": -9.11819692400088,
+        "Hproxy_kJ": 44.42932495231069,
+        "T_K": 298.4058786415932,
+        "P_block_SE_bar": 88.34059791633588
+      },
+      {
+        "shiftK1": 0.2,
+        "P_bar": 596.7433055989925,
+        "Hproxy_kJ": 43.39897419913505,
+        "T_K": 298.93361143568393,
+        "P_block_SE_bar": 143.11911833884685
+      }
+    ],
+    "dP_dK1": 1514.6537563074835,
+    "dP_dK1_block_SE": 420.4695535522204,
+    "deltaK1": -0.19331979544376685,
+    "deltaA4": -0.42463756782098017,
+    "production_ps_per_probe": 20,
+    "equilibration_ps_per_probe": 10,
+    "scope": "Trainingpressurepreconditioneronly; fullsixstateEOSnext"
+  },
+  "round6_final_pressure_polish34": {
+    "parent": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_fit/candidate_33.json",
+    "parent_sha256": "67730de3d5c31abf8a2d84bd6f6dd3b995e81cf0fde6532be530b6d89affb206",
+    "delta_K1": 0.085,
+    "delta_A4_frozen_cohesion_conservation": 0.217786435949296,
+    "sampled_parent_mean_n": 2.5621933641093646,
+    "sampled_parent_mean_under_s4": 0.0,
+    "training_reason": "c33passesall8meanfittedgates,butbothplaneandcentralEOSdensitypredictionsare+.6to.7percentoutsideindependentdensitygate. SmallpressurecorrectionBEFOREanyheldoutdata.",
+    "response_source": "c33actualN512K1plusminus.2secant1514.65+-420.47bar/unit",
+    "expected_pressure_change_bar": 128.74556928613612,
+    "expected_pressure_change_SE_bar": 35.73991205193874,
+    "feedback_prompt": "/Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_llmsr/native_batch7/next_prompt.txt",
+    "feedback_prompt_sha256": "d4845e378fdf9d25f391991518d8a1471a88a9d0c2f56d4d0ce28e2d563e1198",
+    "budget_amendment": "Authorized8thandFINALsamebudgetN512refinement; nofurtherproposalsafterthis, retainc33fallback. ActualMDrequired."
+  }
+}

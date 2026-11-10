@@ -1,0 +1,161 @@
+ROUND 6: JOINT SINGLE-BEAD WATER-MODEL FIT AND VALIDATION
+
+Frozen candidate: /Users/amirbaratifarimani/Documents/Codex/2026-11-04/https-www-pnas-org-doi-epdf/outputs/cg_water/round6_fit/selected_candidate.json
+SHA256: b465820825ebda1337ac11ada2ac3942e1ed5ab287aed7c439a6d7cc3c29070c
+Training: 32 small-cell EOS screens; 8 same-budget larger-cell refinements. Additional pressure probes/diagnostics and excluded wrong-lookup runs are recorded separately.
+Training selection: c34 primary (score 0.972997) under the explicit pre-holdout density-risk amendment; c33 remains the original strict-minimax winner. See SELECTION_AMENDMENT.json.
+Selection, implementation and independent validation are separate stages. No held-out results are used to alter this candidate.
+
+Independent mean research gates pass: True
+Failed mean gates: none
+Overall response qualification: NOT QUALIFIED.
+Expansion/thermal-pressure intervals include zero. Direct central-state pressure is 182.65 bar (T-corrected 180.17 bar), versus the global-plane intercept of 66.45 bar. No transport progression is justified.
+These broad research tolerances are not experimental-level accuracy or production qualification. See confidence intervals, estimator sensitivity and phase diagnostics in round6_validation/REPORT.md.
+
+PROPERTY COMPARISON:
+Density [g/cm3]: previous=0.99990158, native mW=0.99671966, new=0.99542438, reference=0.99704704. Same30ps equilibration+150ps production for allthree models; descriptive ten15psblocks
+Pressure at reference density [bar]: previous=-49.769738, native mW=-16.581852, new=66.447286, reference=1. Primarycentralresearchestimator;actualmeanTregression,nominalTsensitivityretained;blockbootstrapnotcoveragecertified
+Compressibility,EOS [1/bar]: previous=4.8336341e-05, native mW=1.880336e-05, new=4.4351761e-05, reference=4.5246326e-05. Primarycentralresearchestimator;actualmeanTregression,nominalTsensitivityretained;blockbootstrapnotcoveragecertified
+Expansion,EOS [1/K]: previous=0.00098285369, native mW=0.00025674729, new=0.00013660313, reference=0.00025728743. Primarycentralresearchestimator;actualmeanTregression,nominalTsensitivityretained;blockbootstrapnotcoveragecertified
+Pressure-temperature coefficient,EOS [bar/K]: previous=20.333639, native mW=13.654331, new=3.0799934, reference=5.6863717. Primarycentralresearchestimator;actualmeanTregression,nominalTsensitivityretained;blockbootstrapnotcoveragecertified
+Pressure,central anchored at reference T [bar]: previous=-57.370305, native mW=-48.32488, new=180.17483, reference=1. Sensitivity diagnostic; not replacement for locked global gate; substantial disagreement prevents pressure qualification
+Pressure,unrestrained NPT mean [bar]: previous=-27.422989, native mW=12.570956, new=18.976632, reference=1. Barostat-targeted mean is not independent reference-density pressure validation
+Compressibility,NPTfluctuation [1/bar]: previous=4.7724817e-05, native mW=1.8409683e-05, new=4.1111181e-05, reference=4.5246326e-05. Independentconsistencycheck,notselectedinsteadEOS
+Expansion,NPTfluctuation [1/K]: previous=0.00091858745, native mW=0.00021698526, new=0.00010218968, reference=0.00025728743. Independentconsistencycheck,notselectedinsteadEOS
+EffectiveCGCp,NPTfluctuation [J/mol/K]: previous=28.792163, native mW=31.262352, new=36.019413, reference=75.32763. Independentconsistencycheck,notselectedinsteadEOS;CGCpnotdirectlyequivalenttomolecularwaterCp
+EffectiveCGCv,canonical [J/mol/K]: previous=19.121506, native mW=32.463914, new=35.03498, reference=74.53947. Sampling-sensitivecovariancecheck;CGCvnotdirectlyequivalenttomolecularwaterCv
+Pressure-temperature coefficient,canonical [bar/K]: previous=19.931406, native mW=6.5832728, new=7.8092244, reference=5.6863717. Sampling-sensitivecovariancecheck,notselectedinsteadEOS
+Ideal-vapor cohesion proxy [kJ/mol]: previous=43.954295, native mW=44.646544, new=43.967905, reference=43.98748. Notactualphasecoexistenceenthalpyofvaporization
+Experimental RDF RMS,full [dimensionless]: previous=not computed, native mW=0.13181976, new=0.12370729, reference=0. Previousround5matched295Knotcomputed;old298KOPC3diagnosticnotrelabeledexperimental;authorestimatederrorsnotindependentGaussians
+Experimental RDF RMS,firstshell [dimensionless]: previous=not computed, native mW=0.23845272, new=0.20937686, reference=0. Previousround5matched295Knotcomputed;old298KOPC3diagnosticnotrelabeledexperimental;authorestimatederrorsnotindependentGaussians
+OOpeak position,matched295 [A]: previous=not computed, native mW=2.825, new=2.875, reference=2.8. 0.05Ahistogramresolution;oldmatchedstateuncomputed;qdoesnotcertifyphase
+OOpeak height,matched295 [dimensionless]: previous=not computed, native mW=2.0809578, new=2.7668738, reference=2.57. 0.05Ahistogramresolution;oldmatchedstateuncomputed;qdoesnotcertifyphase
+Nearest-four tetrahedral q,matched295 [dimensionless]: previous=not computed, native mW=0.70638208, new=0.72732926, reference=not computed. 0.05Ahistogramresolution;oldmatchedstateuncomputed;qdoesnotcertifyphase
+
+COST:
+[
+  {
+    "mode": "native_mW",
+    "wall_mean_seconds": 6.935437979234848,
+    "wall_range_seconds": [
+      6.847542417002842,
+      7.017097875010222
+    ],
+    "loop_mean_seconds": 6.9337125,
+    "wall_ns_per_day": 124.5775685092812,
+    "loop_ns_per_day": 124.60857008420813,
+    "all_stability_smoke_pass": true,
+    "all_mean_temperatures_within_5percent": true,
+    "wall_cost_relative_native_mW": 1.0,
+    "wall_cost_relative_primary": 0.6291286081427176
+  },
+  {
+    "mode": "polynomial_mW",
+    "wall_mean_seconds": 4.994662531506037,
+    "wall_range_seconds": [
+      4.843105582986027,
+      5.228098834049888
+    ],
+    "loop_mean_seconds": 4.9934650000000005,
+    "wall_ns_per_day": 172.98466003457466,
+    "loop_ns_per_day": 173.02614517173944,
+    "all_stability_smoke_pass": true,
+    "all_mean_temperatures_within_5percent": true,
+    "wall_cost_relative_native_mW": 0.7201654093743439,
+    "wall_cost_relative_primary": 0.45307666163221144
+  },
+  {
+    "mode": "frozen_candidate",
+    "wall_mean_seconds": 11.023879520769697,
+    "wall_range_seconds": [
+      10.728253542096354,
+      11.545282750041224
+    ],
+    "loop_mean_seconds": 11.0213,
+    "wall_ns_per_day": 78.37531228204813,
+    "loop_ns_per_day": 78.39365592080789,
+    "all_stability_smoke_pass": true,
+    "all_mean_temperatures_within_5percent": true,
+    "wall_cost_relative_native_mW": 1.5895001229592,
+    "wall_cost_relative_primary": 1.0
+  },
+  {
+    "mode": "optimized_alias",
+    "wall_mean_seconds": 9.108366104046581,
+    "wall_range_seconds": [
+      8.403549916110933,
+      11.199128624983132
+    ],
+    "loop_mean_seconds": 9.106137499999999,
+    "wall_ns_per_day": 94.85784718470528,
+    "loop_ns_per_day": 94.88106236041352,
+    "all_stability_smoke_pass": true,
+    "all_mean_temperatures_within_5percent": true,
+    "wall_cost_relative_native_mW": 1.3133079888130528,
+    "wall_cost_relative_primary": 0.8262396270646677
+  }
+]
+CurrentimplementationMDcostatfixedshortbudget. Notaccuracy-equivalent, experimentaltransport-clock, equilibriumorproductionqualification. TemperaturecanvarybyHamiltonian;actualTsreportedand5percentmeanTqualificationflagged.
+
+WHAT CHANGED:
+Joint radial-shell updates, independent positive angular strength, stabilized coordination terms, sparse undercoordination corrections and broader second-shell density descriptors were tested. Original numerical experimental gOO at295.15K replaces OPC3 as the primary structural reference. Native mW was simulated under matching protocols.
+The actual upstream LLM-SR buffer was updated repeatedly between adaptive batches. Its agent-authored file sampler is a bounded, transparent workflow; numerical fitting and MD are external. No exhaustive optimum or external API search is claimed.
+
+FAILED HYPOTHESES:
+Born/fluctuation ranking failed its EOS check and was replaced. Large radial-coordinate warps caused severe pressure/structure failures; those models remain recorded. Early static counterterms often failed after relaxation. Incorrect-lookup repeated-parent runs are preserved but excluded from intended-family selection.
+
+REMAINING GAPS:
+A cohesion proxy is not coexistence vaporization enthalpy. Raw CG heat capacities omit molecular degrees of freedom. No intrinsic dipole/dielectric relaxation exists in this neutral position-only Hamiltonian. New-model diffusion, viscosity, surface tension, TMD, melting, boiling/vapor pressure and thermal conductivity require their own validation; old results do not transfer.
+Transport calibration is conditional on acceptable equilibrium sampling and must fit diffusion/viscosity together. A thermostat cannot fix an equilibrium EOS error.
+
+See SYMBOLIC_MODEL.txt, round6_engine/REPRODUCE.txt, METHOD_LIMITS.txt and the compact source/audit bundle. Raw MD trajectories remain in the workspace.
+
+SEPARATE EXACT-KERNEL COST EXPERIMENT:
+[
+  {
+    "mode": "native_mW",
+    "wall_mean_seconds": 7.5857504026498646,
+    "wall_range_seconds": [
+      7.408123290981166,
+      7.792784166987985
+    ],
+    "loop_mean_seconds": 7.584023333333334,
+    "wall_ns_per_day": 113.89776279722919,
+    "loop_ns_per_day": 113.92370012926297,
+    "all_stability_smoke_pass": true,
+    "all_mean_temperatures_within_5percent": true,
+    "wall_cost_relative_native_mW": 1.0,
+    "wall_cost_relative_current_alias": 0.8368069889993307
+  },
+  {
+    "mode": "current_alias",
+    "wall_mean_seconds": 9.065113583385633,
+    "wall_range_seconds": [
+      8.775193833047524,
+      9.60792375006713
+    ],
+    "loop_mean_seconds": 9.062959999999999,
+    "wall_ns_per_day": 95.31044394010932,
+    "loop_ns_per_day": 95.33309205822381,
+    "all_stability_smoke_pass": true,
+    "all_mean_temperatures_within_5percent": true,
+    "wall_cost_relative_native_mW": 1.1950186998268484,
+    "wall_cost_relative_current_alias": 1.0
+  },
+  {
+    "mode": "fast_alias",
+    "wall_mean_seconds": 8.291578638988236,
+    "wall_range_seconds": [
+      6.810162708978169,
+      10.167138500022702
+    ],
+    "loop_mean_seconds": 8.288929999999999,
+    "wall_ns_per_day": 104.20211127677707,
+    "loop_ns_per_day": 104.23540794770858,
+    "all_stability_smoke_pass": true,
+    "all_mean_temperatures_within_5percent": true,
+    "wall_cost_relative_native_mW": 1.0930465937940446,
+    "wall_cost_relative_current_alias": 0.9146690289887688
+  }
+]
+Oneboundedexactkernelfusioncostattempt, nofitting. CurrentimplementationMDcostatfixedshortbudget. Notaccuracy-equivalent, experimentaltransport-clock, equilibriumorproductionqualification. TemperaturecanvarybyHamiltonian;actualTsreportedand5percentmeanTqualificationflagged.
